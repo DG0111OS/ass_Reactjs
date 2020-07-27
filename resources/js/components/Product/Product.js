@@ -4,15 +4,22 @@ import swal from 'sweetalert';
 import axios from 'axios';
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
 
 const Product = () => {
 
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-
         callDataProduct();
-    }, []);
+    },  []);
+
     // lấy danh sách sản phẩm
     const callDataProduct = () => {
         axios.get('/api/product')
@@ -32,9 +39,9 @@ const Product = () => {
                     <th>{quantity}</th>
                     <th><img src={image} alt=""/></th>
                     <th>
-                        <button className="btn">
+                        <Link to={`product/${id}`} className="btn">
                             <FaPencilAlt />
-                        </button>
+                        </Link>
                         <button onClick={() => destroyProduct(id)} className="btn">
                             <FaTrashAlt />
                         </button>
@@ -43,7 +50,7 @@ const Product = () => {
             )
         })
     }
-
+    // xoa san pham le.
     const destroyProduct = (id) => {
         swal({
             title: "Bạn có muốn xóa không?",

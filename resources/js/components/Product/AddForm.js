@@ -53,8 +53,6 @@ export default function AddForm() {
                 }
             });
 
-
-
         e.preventDefault();
     }
 

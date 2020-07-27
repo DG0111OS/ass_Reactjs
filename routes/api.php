@@ -20,3 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('product', 'ProductController');
 Route::resource('category', 'CategoryController');
+
+// passport
+Route::post('login', 'UserController@login');
+Route::post('register', 'UserController@register');
+
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::post('details', 'UserController@details');
+});

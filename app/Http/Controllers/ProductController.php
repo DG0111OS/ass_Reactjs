@@ -52,7 +52,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -63,7 +63,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return response()->json('form edit prodcut');
     }
 
     /**

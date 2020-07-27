@@ -21,7 +21,7 @@
         <!-- Styles -->
     </head>
     <body>
-    <div id="app"></div>
+    <div id="appModule"></div>
     <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
