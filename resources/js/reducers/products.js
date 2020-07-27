@@ -1,18 +1,19 @@
 
 
-let defaultState = [
-    {
-        id: 1,
-        name: 'name 1',
-    },
-    {
-        id: 2,
-        name: 'name 2'
-    }
-];
+const initialState = {
+    list: [],
+}
 
-const products = (state = defaultState, action) => {
-  return state;
+const products = (state = initialState, action) => {
+    switch (action.type) {
+        case 'LIST_PRODUCT': {
+            const newList = [...state.list];
+            newList.push(action.payload);
+            return state
+        }
+        default:
+            return state
+    }
 };
 
-export default products();
+export default products;

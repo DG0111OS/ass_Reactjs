@@ -39,10 +39,10 @@ export default function SideBar() {
                     <div className="collapse" id="page-layouts">
                         <ul className="nav flex-column sub-menu">
                             <li className="nav-item">
-                                <NavLink exact activeClassName="active" className="nav-link" to="/product">Danh sách sản phẩm</NavLink>
+                                <NavLink exact activeClassName="active" className="nav-link" to="/admin/products">Danh sách sản phẩm</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink exact activeClassName="active" className="nav-link" to="/product/add">Thêm sản phẩm</NavLink>
+                                <NavLink exact activeClassName="active" className="nav-link" to="/admin/product/add">Thêm sản phẩm</NavLink>
                             </li>
                         </ul>
                     </div>
