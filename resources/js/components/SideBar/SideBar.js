@@ -24,11 +24,12 @@ export default function SideBar() {
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="index.html">
+                    <Link to='/admin' className="nav-link">
                         <span className="menu-title">Dashboard</span>
                         <i className="mdi mdi-home menu-icon"/>
-                    </a>
+                    </Link>
                 </li>
+
                 <li className="nav-item">
                     <a className="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false"
                        aria-controls="page-layouts">
@@ -43,6 +44,44 @@ export default function SideBar() {
                             </li>
                             <li className="nav-item">
                                 <NavLink exact activeClassName="active" className="nav-link" to="/admin/product/add">Thêm sản phẩm</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li className="nav-item">
+                    <a className="nav-link" data-toggle="collapse" href="#page-cate" aria-expanded="false"
+                       aria-controls="page-cate">
+                        <span className="menu-title">Danh Mục</span>
+                        <i className="menu-arrow"/>
+                        <i className="mdi mdi-apps menu-icon"/>
+                    </a>
+                    <div className="collapse" id="page-cate">
+                        <ul className="nav flex-column sub-menu">
+                            <li className="nav-item">
+                                <NavLink exact activeClassName="active" className="nav-link" to="/admin/categories">Danh sách danh mục</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink exact activeClassName="active" className="nav-link" to="/admin/category/add">Thêm danh mục</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li className="nav-item">
+                    <a className="nav-link" data-toggle="collapse" href="#page-post" aria-expanded="false"
+                       aria-controls="page-post">
+                        <span className="menu-title">Bài Viết</span>
+                        <i className="menu-arrow"/>
+                        <i className="mdi mdi-apps menu-icon"/>
+                    </a>
+                    <div className="collapse" id="page-post">
+                        <ul className="nav flex-column sub-menu">
+                            <li className="nav-item">
+                                <NavLink exact activeClassName="active" className="nav-link" to="/admin/posts">Danh sách bài viết</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink exact activeClassName="active" className="nav-link" to="/admin/post/add">Thêm bài viết</NavLink>
                             </li>
                         </ul>
                     </div>

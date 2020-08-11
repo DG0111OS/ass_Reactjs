@@ -18,7 +18,6 @@ class ProductSeeder extends Seeder
                 'description' => 'Sản phầm này là một sản phẩm tốt',
                 'image' => 'https://picsum.photos/seed/picsum/200/300',
                 'price' => 100,
-                'promotion_price' => 100,
                 'quantity' => 100,
             ],
             [
@@ -26,9 +25,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Sản phẩm 2',
                 'description' => 'Sản phầm này là một sản phẩm tốt',
                 'image' => 'https://picsum.photos/seed/picsum/200/300',
-
                 'price' => 100,
-                'promotion_price' => 100,
                 'quantity' => 100,
             ],
             [
@@ -36,9 +33,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Sản phẩm 3',
                 'description' => 'Sản phầm này là một sản phẩm tốt',
                 'image' => 'https://picsum.photos/seed/picsum/200/300',
-
                 'price' => 100,
-                'promotion_price' => 100,
                 'quantity' => 100,
             ],
             [
@@ -46,9 +41,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Sản phẩm 4',
                 'description' => 'Sản phầm này là một sản phẩm tốt',
                 'image' => 'https://picsum.photos/seed/picsum/200/300',
-
                 'price' => 100,
-                'promotion_price' => 100,
                 'quantity' => 100,
             ],
             [
@@ -56,9 +49,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Sản phẩm 5',
                 'description' => 'Sản phầm này là một sản phẩm tốt',
                 'image' => 'https://picsum.photos/seed/picsum/200/300',
-
                 'price' => 100,
-                'promotion_price' => 100,
                 'quantity' => 100,
             ],
             [
@@ -66,9 +57,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Sản phẩm 6',
                 'description' => 'Sản phầm này là một sản phẩm tốt',
                 'image' => 'https://picsum.photos/seed/picsum/200/300',
-
                 'price' => 10,
-                'promotion_price' => 100,
                 'quantity' => 100,
             ]
         ]);

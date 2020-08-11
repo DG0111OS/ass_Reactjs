@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -14,8 +16,13 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $pro = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select('products.*', 'categories.name as nameCate')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        return response()->json(Product::all(),200);
+        return response()->json($pro,200);
     }
 
     /**
@@ -41,8 +48,6 @@ class ProductController extends Controller
         $product->fill($request->all());
         $product->save();
 
-
-//        return response()->json($request->all());
     }
 
     /**
@@ -53,7 +58,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-
+        return response()->json(Product::find($id),200);
     }
 
     /**
@@ -64,7 +69,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return response()->json('form edit prodcut');
+        $product = Product::find($id);
+        return response()->json($product);
     }
 
     /**
@@ -76,7 +82,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pro = Product::find($id);
+
+        if($pro == null)
+            return 'sua that bai';
+
+        $pro->fill($request->all());
+        $pro->save();
+
+        return 'ThankCong';
     }
 
     /**

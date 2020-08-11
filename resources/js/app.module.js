@@ -1,27 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from "react-dom";
-import SideBar from "./components/SideBar/SideBar";
-import Navbar from "./components/Navbar/Navbar";
-
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-
-
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 
 import Routes from './routes';
 
-import { Provider } from 'react-redux'
-
+import {Provider, useDispatch, useSelector} from 'react-redux'
 import store from "./store";
+import {categoryAllResquest} from "./actions/categories";
+import {allProduct} from "./actions/products";
+import {allPosts} from "./actions/posts";
 
 export default function AppModule() {
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(categoryAllResquest());
+        dispatch(allProduct())
+        dispatch(allPosts())
+    }, [])
 
     return (
         <div>

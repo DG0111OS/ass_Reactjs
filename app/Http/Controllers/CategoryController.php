@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -39,7 +40,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cate = new Category();
+        $cate->name = $request->name;
+        $cate->parent_id = 0;
+        $cate->active = 1;
+        $cate->save();
     }
 
     /**
@@ -61,7 +66,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return response()->json(Category::find($id),200);
     }
 
     /**
@@ -73,7 +78,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cate = Category::find($id);
+        $cate->fill($request->all());
+        $cate->save();
+
     }
 
     /**
@@ -84,6 +92,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pro = Product::where('category_id','=',$id)->get();
+
+        foreach ($pro as $value) {
+            Product::destroy($value->id);
+        }
+
+        Category::destroy($id);
     }
 }
